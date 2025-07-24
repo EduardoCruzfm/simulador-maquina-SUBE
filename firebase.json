@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/simulador_maquina_sube/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
