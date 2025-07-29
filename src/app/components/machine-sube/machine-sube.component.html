@@ -1,0 +1,43 @@
+<div class="machine-container">
+  <div class="screen">
+    <p class="line">L37 A  R9411  S{{this.seccion}}</p>
+    <p class="line">SECC. DESTINO _</p>
+    <p class="line small">{{ this.shortDate }} I:00021 {{ this.currenTime }}</p>
+  </div>
+
+  <div class="buttons-panel">
+    <div class="row">
+      <button class="btn blue">MJS</button>
+      <button class="btn blue" (click)="nextSection()">SECCION</button>
+      <button class="btn blue">MENU</button>
+      <button class="btn red">C</button>
+      <button class="btn red">CANCELAR</button>
+    </div>
+    <div class="grid">
+      <button 
+        class="btn" 
+        *ngFor="let value of currentValues; let i = index"
+        (click)="presionarBoton(i)">
+        {{ i + 1 }}
+      </button>
+      <button (click)="invalidSeccion()" class="btn">9</button>
+      <button (click)="invalidSeccion()"class="btn">0</button>
+      <button class="btn enter">ENTER</button>
+    </div>
+    <div class="nav">
+  <div class="circle"></div>
+  <div class="arrows">
+    <div></div>
+    <button class="arrow up">↑</button>
+    <div></div>
+    <button class="arrow left">←</button>
+    <div></div>
+    <button class="arrow right">→</button>
+    <div></div>
+    <button class="arrow down">↓</button>
+    <div></div>
+  </div>
+</div>
+
+  </div>
+</div>
