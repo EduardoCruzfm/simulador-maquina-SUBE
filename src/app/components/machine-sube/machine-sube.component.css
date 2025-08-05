@@ -28,6 +28,7 @@
 
 .line {
   margin: 2px 0;
+  white-space: pre-line;
 }
 
 .line.small {

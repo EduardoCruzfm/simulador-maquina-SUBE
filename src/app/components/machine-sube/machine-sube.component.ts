@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Boleto } from '../../types/boleto.type';
 
 @Component({
   selector: 'app-machine-sube',
@@ -10,8 +11,9 @@ import { Component } from '@angular/core';
 })
 export class MachineSUBEComponent {
 
-  boletos: any[] = [451.01, 502.43, 541.13, 541.13, 579.87, 579.87, 579.87, 579.87];
-  seccion: number = 1;
+  boletos: Boleto[] = [451.01, 502.43, 541.13, 541.13, 579.87, 579.87, 579.87, 579.87];
+  section: number = 1;
+  displayText: string = 'SECC. DESTINO _';
   date = new Date();
   hour = this.date.getHours().toString().padStart(2, '0');
   minutes = this.date.getMinutes().toString().padStart(2, '0');
@@ -22,35 +24,46 @@ export class MachineSUBEComponent {
 
   currenTime = `${this.hour}:${this.minutes}`;
 
-  get currentValues(): number[] {
+  get currentValues(): Boleto[] {
     return this.boletos.map((valor, index) => {
       // Cada sección puede modificar los valores si es necesario
       return valor;
     });
   }
 
-  presionarBoton(index: number) {
-    const valor = this.currentValues[index];
-    console.log(`Botón ${index + 1} presionado. Valor: $${valor}`);
+  pressButton(index: number) {
+    const value: string | number = this.currentValues[index];
+
+    if (value == 'SECCIÓN INVÁLIDA') {
+      this.displayText = `${value}`;
+      console.log(`Botón ${index + 1} presionado. ${value}`);
+    }
+    else{
+      this.displayText = `IMPORTE A PAGAR:\n $${value}`;
+      console.log(`Botón ${index + 1} presionado. Valor: $${value}`);
+    }
   }
 
+  cancel(){
+    this.displayText = 'SECC. DESTINO _';
+  }
 
   nextSection() {
-    this.seccion++;
+    this.section++;
 
-    if (this.seccion > this.boletos.length) {
+    if (this.section > this.boletos.length) {
       this.invalidSeccion();
       return;
     }
 
     // Actualizamos los boletos: desplazamos los valores
-    const nuevoValor = 'Sección inválida';
+    const newValue = 'SECCIÓN INVÁLIDA';
     this.boletos = [
-      nuevoValor,
+      newValue,
       ...this.boletos.slice(0, this.boletos.length - 1)
     ];
 
-    console.log(`Sección cambiada: ${this.seccion}`);
+    console.log(`Sección cambiada: ${this.section}`);
     console.log('Nuevos valores de boletos:', this.boletos);
   }
 

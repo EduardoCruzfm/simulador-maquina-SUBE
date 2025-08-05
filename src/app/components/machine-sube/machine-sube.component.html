@@ -1,7 +1,7 @@
 <div class="machine-container">
   <div class="screen">
-    <p class="line">L37 A  R9411  S{{this.seccion}}</p>
-    <p class="line">SECC. DESTINO _</p>
+    <p class="line">L37 A  R9411  S{{this.section}}</p>
+    <p class="line">{{ this.displayText }}</p>
     <p class="line small">{{ this.shortDate }} I:00021 {{ this.currenTime }}</p>
   </div>
 
@@ -11,13 +11,13 @@
       <button class="btn blue" (click)="nextSection()">SECCION</button>
       <button class="btn blue">MENU</button>
       <button class="btn red">C</button>
-      <button class="btn red">CANCELAR</button>
+      <button class="btn red" (click)="cancel()">CANCELAR</button>
     </div>
     <div class="grid">
       <button 
         class="btn" 
         *ngFor="let value of currentValues; let i = index"
-        (click)="presionarBoton(i)">
+        (click)="pressButton(i)">
         {{ i + 1 }}
       </button>
       <button (click)="invalidSeccion()" class="btn">9</button>
