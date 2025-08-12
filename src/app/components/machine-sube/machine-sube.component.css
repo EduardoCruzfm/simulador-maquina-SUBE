@@ -1,3 +1,37 @@
+/* PREGUNTAS */
+.pregunta-container {
+  width: 320px; /* igual que la máquina */
+  margin: 0 auto 15px auto; /* centrado y espacio debajo */
+  padding: 10px;
+  background: #f4f4f4; /* gris claro */
+  border: 3px solid #333;
+  border-radius: 8px;
+  font-family: monospace;
+  text-align: center;
+  box-shadow: 0 0 8px #0005;
+}
+
+.pregunta-container h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #2b87ed; /* mismo azul que máquina */
+}
+
+.pregunta-container p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.pregunta-container small {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #555;
+}
+
+
+/* SUBE */
 .machine-container {
   display: flex;
   flex-direction: column;

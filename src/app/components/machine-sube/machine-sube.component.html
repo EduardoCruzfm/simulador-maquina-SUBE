@@ -1,3 +1,11 @@
+<!-- Pregunta actual -->
+<div class="pregunta-container" *ngIf="preguntaActual">
+  <strong>Pregunta:</strong>
+  <p>Hasta {{ preguntaActual.lugar }} (Sección {{ preguntaActual.seccion }})</p>
+  <small>(Respuesta correcta: botón {{ preguntaActual.respuesta }})</small>
+</div>
+
+<!-- Maquina SUBE -->
 <div class="machine-container">
   <div class="screen">
     <p class="line">L37 A  R9411  S{{this.section}}</p>

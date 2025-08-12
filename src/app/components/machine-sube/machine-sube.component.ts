@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Boleto } from '../../types/boleto.type';
+import { PREGUNTAS } from '../../data/preguntas.data';
 
 @Component({
   selector: 'app-machine-sube',
@@ -12,6 +13,8 @@ import { Boleto } from '../../types/boleto.type';
 export class MachineSUBEComponent {
 
   boletos: Boleto[] = [451.01, 502.43, 541.13, 541.13, 579.87, 579.87, 579.87, 579.87];
+  data: {} = PREGUNTAS;
+  preguntaActual: any;
   section: number = 1;
   displayText: string = 'SECC. DESTINO _';
   date = new Date();
@@ -68,6 +71,8 @@ export class MachineSUBEComponent {
   }
 
   invalidSeccion() {
+    this.displayText = `SECCIÓN INVÁLIDA`;
     console.log('Sección inválida');
   }
+
 }
