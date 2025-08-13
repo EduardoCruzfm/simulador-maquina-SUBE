@@ -1,8 +1,8 @@
 <!-- Pregunta actual -->
-<div class="pregunta-container" *ngIf="preguntaActual">
+<div class="pregunta-container" *ngIf="currentQuestion">
   <strong>Pregunta:</strong>
-  <p>Hasta {{ preguntaActual.lugar }} (Sección {{ preguntaActual.seccion }})</p>
-  <small>(Respuesta correcta: botón {{ preguntaActual.respuesta }})</small>
+  <p>Hasta {{ currentQuestion.lugar }} (Sección {{ currentQuestion.seccion }})</p>
+  <small>(Respuesta correcta: botón {{ currentQuestion.respuesta }})</small>
 </div>
 
 <!-- Maquina SUBE -->

@@ -14,7 +14,7 @@ export class MachineSUBEComponent {
 
   boletos: Boleto[] = [451.01, 502.43, 541.13, 541.13, 579.87, 579.87, 579.87, 579.87];
   data: {} = PREGUNTAS;
-  preguntaActual: any;
+  currentQuestion: any;
   section: number = 1;
   displayText: string = 'SECC. DESTINO _';
   date = new Date();
@@ -26,6 +26,10 @@ export class MachineSUBEComponent {
   shortDate = `${this.day}/${this.month}`;
 
   currenTime = `${this.hour}:${this.minutes}`;
+
+  ngOnInit() {
+    this.loadQuestion();
+  }
 
   get currentValues(): Boleto[] {
     return this.boletos.map((valor, index) => {
@@ -66,6 +70,7 @@ export class MachineSUBEComponent {
       ...this.boletos.slice(0, this.boletos.length - 1)
     ];
 
+    this.loadQuestion()
     console.log(`Sección cambiada: ${this.section}`);
     console.log('Nuevos valores de boletos:', this.boletos);
   }
@@ -73,6 +78,36 @@ export class MachineSUBEComponent {
   invalidSeccion() {
     this.displayText = `SECCIÓN INVÁLIDA`;
     console.log('Sección inválida');
+  }
+
+  loadQuestion() {
+    const allSections = Object.keys(PREGUNTAS);
+
+    // Filtrar solo secciones posteriores a la actual
+    const filteredSections = allSections.filter(key => {
+      const numSection = Number(PREGUNTAS[key][0].seccion);
+      return numSection > this.section; // posterior a la actual
+    });
+
+    if (filteredSections.length === 0) {
+      this.currentQuestion = null;
+      return;
+    }
+
+    // Elegir sección al azar
+    const RandomKeySection = filteredSections[Math.floor(Math.random() * filteredSections.length)];
+    const questionBase = PREGUNTAS[RandomKeySection][0];
+
+    // Elegir lugar al azar
+    const lugares = questionBase.Lugares;
+    const lugarRandom = lugares[Math.floor(Math.random() * lugares.length)];
+
+    // Guardar pregunta actual con respuesta incluida
+    this.currentQuestion = {
+      seccion: questionBase.seccion,
+      lugar: lugarRandom,
+      respuesta: questionBase.respuesta
+    };
   }
 
 }
