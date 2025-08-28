@@ -10,4 +10,11 @@ export const routes: Routes = [
           (m) => m.MachineSUBEComponent
         ),
     },
+    {
+      path: 'home',
+      loadComponent: () =>
+        import('./components/home/home.component').then(
+          (m) => m.HomeComponent
+        ),
+    },
 ];
