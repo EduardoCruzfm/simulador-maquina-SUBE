@@ -1,140 +1,120 @@
 
-@import "bootstrap/dist/css/bootstrap-grid.min.css"; /* solo grid */
-@import "bootstrap/dist/css/bootstrap-utilities.min.css"; /* utilidades */
-
-*/
-
-.menu-container {
+/* Navbar */
+.navbar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-  background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 20px;
-    overflow: hidden; /* Evita scroll */
-    
-  }
-  
-  .row {
-    display: flex; /* Coloca los elementos en fila */
-    flex-wrap: wrap; /* Permite que se ajusten en pantallas más pequeñas */
-    justify-content: center; /* Centra horizontalmente */
-    gap: 10px; /* Espaciado entre columnas */
-    width: 100%;
-  }
-  
-  .category-col {
-    display: flex;
-    justify-content: center;
-    /* flex: 1 1 auto; Asegura flexibilidad */
-    /* margin-bottom: 20px; */
-  }
-  
-  .category-card {
-    position: relative;
-    text-align: center;
-    overflow: hidden;    
-  }
-    
-    .especialidad-boton {
-      border: none;
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    width: 25vw; /* Botón adaptado al ancho de la ventana */
-    height: 85vh; /* Altura relativa a la ventana */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .especialidad-boton:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .especialidad-imagen {
-    width: 100%; /* Imagen llena el contenedor */
-    height: 100%;
-    object-fit: cover; /* Ajuste proporcional */
-    border-radius: 0%; /* Imagen rectangular */
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    color: white;
-    font-size: 2rem;
+  background: #222;
+  padding: 1rem 1.5rem;
+  color: white;
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+
+  margin: 1; 
+
+  .navbar-brand {
     font-weight: bold;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .text {
-    opacity: 0.8; /* Letras transparentes */
-  }
-  
-  .col-md-3:hover .overlay {
-    opacity: 1; /* Mostrar al pasar el mouse */
+    font-size: 1.4rem;
   }
 
-  /*  */
-  @media (max-width: 768px) {
-  .menu-container {
-    margin-top: 1rem;
+  .navbar-toggler {
+    display: none;
+    font-size: 1.9rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
-  
-  .category-card {
-    height: 30vh;
-  }      
+
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+
+    li a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #ffcc00;
+      }
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      display: block;
+    }
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.8rem;
+      background: rgba(0,0,0,0.9);
+      position: fixed;   /* 👈 ocupa toda la pantalla */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      padding: 2rem;
+      font-size: 1.8rem;
+      z-index: 9999;
+    }
+    .navbar-links.open {
+      display: flex;
+    }
+  }
 }
 
-@media (max-width: 768px) {
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Menu de categorías */
+.menu-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px; /* 👈 espacio lateral en TODOS los botones */
+  min-height: calc(100vh - 50px); 
+  margin: 0;
+
+  .category-card {
+    position: relative;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro */
-    opacity: 1; /* Siempre visible en móviles */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .especialidad-imagen {
+    .especialidad-boton {
+      position: relative;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: bottom !important; 
-      filter: brightness(50%); /* Oscurece solo en móviles */
-    }
-    
-    .especialidad-boton > span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: rgb(205, 202, 202); /* Asegura que el texto sea visible */
-      padding: 5px 10px;
-      border-radius: 5px;
-      z-index: 2; /* Asegura que esté encima del overlay */
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      .especialidad-imagen {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 20px;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.8rem;
+        border-radius: 20px;
+      }
     }
   }
-  
+}

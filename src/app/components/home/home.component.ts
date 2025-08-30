@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgbAlertModule],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+   menuOpen = false;
 
   constructor(private router: Router) { }
 
@@ -17,4 +17,7 @@ export class HomeComponent {
     this.router.navigate([`${page}`]);
   }
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }

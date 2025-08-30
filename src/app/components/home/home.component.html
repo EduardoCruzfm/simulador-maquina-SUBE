@@ -1,34 +1,42 @@
-<div class="menu-container row g-0">
-  <div class="row">
-    <div class="col-md-3 col-sm-12 category-col">
-      <div class="category-card w-full">
-        <button class="especialidad-boton w-100" (click)="goTo('sube')">
-          <span class="d-md-none">Secciones</span>
-          <img src="image/secciones2.jpg" [alt]="" class="especialidad-imagen w-100">
-          <div class="overlay">
-          </div>
-        </button>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-brand">37 App</div>
+  <button class="navbar-toggler" (click)="toggleMenu()">
+    &#9776;
+  </button>
+  <ul class="navbar-links" [class.open]="menuOpen">
+    <li><a (click)="goTo('home')">Home</a></li>
+    <li><a (click)="goTo('about')">Quién Soy</a></li>
+    <li><a (click)="goTo('contact')">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- Menu principal -->
+<div class="menu-container">
+  <div class="category-card">
+    <button class="especialidad-boton" (click)="goTo('secciones')">
+      <img src="image/secciones2.jpg" alt="Secciones" class="especialidad-imagen">
+      <div class="overlay">
+        <span>Secciones</span>
       </div>
-    </div>
-    <div class="col-md-3 col-sm-12 category-col">
-      <div class="category-card w-full">
-        <button class="especialidad-boton w-100" (click)="goTo('')">
-          <span class="d-md-none">Punto de Interes & Refencias</span>
-          <img src="image/planetario.jpg" [alt]="" class="especialidad-imagen w-100">
-          <div class="overlay">
-          </div>
-        </button>
+    </button>
+  </div>
+
+  <div class="category-card">
+    <button class="especialidad-boton" (click)="goTo('interes')">
+      <img src="image/planetario.jpg" alt="Punto de Interes & Refencias" class="especialidad-imagen">
+      <div class="overlay">
+        <span>Punto de Interes & Refencias</span>
       </div>
-    </div>
-    <div class="col-md-3 col-sm-12 category-col">
-      <div class="category-card w-full">
-        <button class="especialidad-boton w-100" (click)="goTo('')">
-          <span class="d-md-none">Simulador SUBE</span>
-          <img src="image/simulador.jpg" [alt]="" class="especialidad-imagen w-100">
-          <div class="overlay">
-          </div>
-        </button>
+    </button>
+  </div>
+
+  <div class="category-card">
+    <button class="especialidad-boton" (click)="goTo('sube')">
+      <img src="image/simulador.jpg" alt="Simulador SUBE" class="especialidad-imagen">
+      <div class="overlay">
+        <span>Simulador SUBE</span>
       </div>
-    </div>
+    </button>
   </div>
 </div>
