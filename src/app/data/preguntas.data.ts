@@ -49,7 +49,7 @@ export const PREGUNTAS: Record<string, Pregunta[]> =
     {
       "seccion": "6",
       "Lugares": ["Tagle", "Hospital Rivadavia", "Sanchez de Bustamante", "Hospital Fernandez", "Ocampo", 
-                  "Av. Coronel Diaz", "Las Heras", "Village Recoleta", "Cementerio de Recoleta", "Junin", "Av. Pueyrredón", "Eco Parque", "Plaza Italia"],
+                  "Av. Coronel Diaz", "Las Heras", "Av. Pueyrredón", "Eco Parque", "Plaza Italia"],
       "respuesta": 6
     }
   ],

@@ -1,3 +1,60 @@
+/* Navbar del Simulador */
+.sim-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 centra el título */
+  position: relative;      /* 👈 para posicionar la flecha */
+  background: #222;
+  /* padding: 0.8rem 1rem; */
+   padding: 1.5rem 1.5rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  max-width: 420px; /* igual que el simulador */
+  margin: 0 auto 30px auto;
+}
+
+
+.navbar-title {
+  flex: 1;
+  text-align: center;
+}
+.back-btn svg {
+  fill: white; /* Controla el color */
+  transition: fill 0.3s;
+}
+
+.back-btn svg:hover {
+  fill: #f0a500;
+}
+
+
+.back-btn {
+  background: none;
+  color: white;  
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%); /* lo centra verticalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn img {
+  width: 28px;   /* 👈 ajusta tamaño */
+  height: 28px;  /* 👈 ajusta tamaño */
+}
+
+.back-btn:hover {
+  color: #ffcc00;
+}
+
+
 /* PREGUNTAS */
 .pregunta-container {
   width: 320px; /* igual que la máquina */
@@ -9,6 +66,8 @@
   font-family: monospace;
   text-align: center;
   box-shadow: 0 0 8px #0005;
+
+   font-size: 18px;  /* 👈 agranda la fuente general */
 }
 
 .pregunta-container h3 {
@@ -19,7 +78,7 @@
 
 .pregunta-container p {
   margin: 0;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: bold;
 }
 
@@ -147,4 +206,14 @@
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.btn.correcta {
+  background-color: green !important;
+  color: white;
+}
+
+.btn.incorrecta {
+  background-color: red !important;
+  color: white;
 }

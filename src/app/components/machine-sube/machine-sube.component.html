@@ -1,8 +1,19 @@
+ <!-- Navbar del Simulador -->
+<nav class="sim-navbar">
+<button class="back-btn" (click)="goBack()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27" height="27" fill="white">
+    <path d="M15 19l-7-7 7-7"/>
+  </svg>
+</button>
+
+  <div class="navbar-brand">Simulador SUBE</div>
+</nav>
+
 <!-- Pregunta actual -->
 <div class="pregunta-container" *ngIf="currentQuestion">
   <strong>Pregunta:</strong>
   <p>Hasta {{ currentQuestion.lugar }} (Sección {{ currentQuestion.seccion }})</p>
-  <small>(Respuesta correcta: botón {{ currentQuestion.respuesta }})</small>
+  <small *ngIf="this.esCorrecta == false">(Respuesta correcta: botón {{ currentQuestion.respuesta }})</small>
 </div>
 
 <!-- Maquina SUBE -->
@@ -25,7 +36,11 @@
       <button 
         class="btn" 
         *ngFor="let value of currentValues; let i = index"
-        (click)="pressButton(i)">
+        (click)="pressButton(i)"
+         [ngClass]="{
+          'correcta': respuestaSeleccionada === i && esCorrecta === true,
+          'incorrecta': respuestaSeleccionada === i && esCorrecta === false
+        }">
         {{ i + 1 }}
       </button>
       <button (click)="invalidSeccion()" class="btn">9</button>

@@ -27,6 +27,9 @@ export class MachineSUBEComponent {
 
   currenTime = `${this.hour}:${this.minutes}`;
 
+  respuestaSeleccionada: number | null = null;
+  esCorrecta: boolean | null = null;
+
   ngOnInit() {
     this.loadQuestion();
   }
@@ -40,6 +43,7 @@ export class MachineSUBEComponent {
 
   pressButton(index: number) {
     const value: string | number = this.currentValues[index];
+    this.respuestaSeleccionada = index;
 
     if (value == 'SECCIÓN INVÁLIDA') {
       this.displayText = `${value}`;
@@ -48,7 +52,31 @@ export class MachineSUBEComponent {
     else{
       this.displayText = `IMPORTE A PAGAR:\n $${value}`;
       console.log(`Botón ${index + 1} presionado. Valor: $${value}`);
+      this.backgroundColor(index);
+      // otra ves cargar la pregunta
+      // this.loadQuestion();
     }
+  }
+
+  backgroundColor(index: number){
+    // cambiar el color al presionar el boton
+    if (this.currentQuestion && this.currentQuestion.respuesta == index + 1) {
+      console.log('Respuesta correcta');
+      this.esCorrecta = true;
+
+      setTimeout(() => {
+        this.esCorrecta = null;
+        this.loadQuestion();
+      }, 1000); // Espera 1 segundo antes de cambiar a la siguiente sección
+    }
+    else{
+      console.log('Respuesta incorrecta');
+      this.esCorrecta = false;
+    }
+
+    // si el la respuesta es correcta cambiar el color a verde el fondo del div
+
+    
   }
 
   cancel(){
@@ -57,6 +85,7 @@ export class MachineSUBEComponent {
 
   nextSection() {
     this.section++;
+    this.esCorrecta = null;
 
     if (this.section > this.boletos.length) {
       this.invalidSeccion();
@@ -109,5 +138,9 @@ export class MachineSUBEComponent {
       respuesta: questionBase.respuesta
     };
   }
+
+  goBack() {
+  window.history.back();
+}
 
 }
