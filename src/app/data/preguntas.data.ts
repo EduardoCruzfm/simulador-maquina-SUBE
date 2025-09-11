@@ -64,7 +64,7 @@ export const PREGUNTAS: Record<string, Pregunta[]> =
    "GEBA": [
     {
       "seccion": "8",
-      "Lugares": ["Av. de Los Ombus", "Aysa Plata San Martin", "La Pampa", "Jardin Japones",
+      "Lugares": ["Av. de Los Ombus", "Aysa Plata San Martin", "La Pampa",
                   "Ciudad Universitaria"],
       "respuesta": 8
     }
