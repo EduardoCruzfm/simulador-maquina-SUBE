@@ -73,10 +73,6 @@ export class MachineSUBEComponent {
       console.log('Respuesta incorrecta');
       this.esCorrecta = false;
     }
-
-    // si el la respuesta es correcta cambiar el color a verde el fondo del div
-
-    
   }
 
   cancel(){
@@ -140,7 +136,16 @@ export class MachineSUBEComponent {
   }
 
   goBack() {
-  window.history.back();
-}
+    window.history.back();
+  }
 
+  // cosas para mejorar son el navbar del simulador quedo fijo pero en en mobile se ve bien
+  // el tamaño del simulador se ve bien el celulares mas altos como el 12 pro max, en el 8 plus de cortado con scroll
+  // agregar sonido al presionar los botones
+  // agregar animacion al presionar los botones
+  // agregar un boton para recargar la pregunta sin cambiar de seccion
+  // agregar un boton para ver la respuesta correcta
+  // agregar un boton para reiniciar el simulador
+  // agregar un boton para cambiar el tema del simulador (claro/oscuro)
+  // mejorar el diseño del simulador en mobile
 }
