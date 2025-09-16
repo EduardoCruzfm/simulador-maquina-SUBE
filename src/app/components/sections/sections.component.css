@@ -1,0 +1,118 @@
+.sim-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 centra el título */
+  position: relative;      /* 👈 para posicionar la flecha */
+  background: #222;
+   padding: 1.5rem 1.5rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  margin: 0 auto 30px auto;
+}
+
+.back-btn svg {
+  fill: white;
+  transition: fill 0.3s;
+}
+
+.back-btn svg:hover {
+  fill: #f0a500;
+}
+
+
+.back-btn {
+  background: none;
+  color: white;  
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn img {
+  width: 28px;   
+  height: 28px; 
+}
+
+.back-btn:hover {
+  color: #ffcc00;
+}
+
+.ramales-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.ramales-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  padding: 10px 15px;
+  border: 1px solid #0077cc;
+  background: #fff;
+  color: #0077cc;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tabs button:hover {
+  background: #f0f8ff;
+}
+
+.tabs button.active {
+  background: #0077cc;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Contenido */
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fdfdfd;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.tab-content h3 {
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+.tab-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab-content li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-content li:last-child {
+  border-bottom: none;
+}

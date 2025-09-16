@@ -1,0 +1,31 @@
+<nav class="sim-navbar">
+<button class="back-btn" (click)="goBack()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27" height="27" fill="white">
+    <path d="M15 19l-7-7 7-7"/>
+  </svg>
+</button>
+
+  <div class="navbar-brand">Secciones de los Ramales</div>
+</nav>
+
+<div class="ramales-container">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button *ngFor="let ramal of ramales; let i = index"
+            (click)="seleccionarRamal(i)"
+            [class.active]="i === selectedIndex">
+      {{ ramal.nombre }}
+    </button>
+  </div>
+
+  <!-- Contenido -->
+  <div class="tab-content">
+    <h3>{{ ramales[selectedIndex].nombre }}</h3>
+    <ul>
+      <li *ngFor="let sec of ramales[selectedIndex].secciones">
+        {{ sec }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -24,4 +24,11 @@ export const routes: Routes = [
           (m) => m.PointsOfInterestComponent
         ),
     },
+    {
+      path: 'sections',
+      loadComponent: () =>
+        import('./components/sections/sections.component').then(
+          (m) => m.SectionsComponent
+        ),
+    },
 ];
