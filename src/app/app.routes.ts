@@ -17,4 +17,11 @@ export const routes: Routes = [
           (m) => m.HomeComponent
         ),
     },
+    {
+      path: 'interest',
+      loadComponent: () =>
+        import('./components/points-of-interest/points-of-interest.component').then(
+          (m) => m.PointsOfInterestComponent
+        ),
+    },
 ];

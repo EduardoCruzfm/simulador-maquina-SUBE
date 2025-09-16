@@ -1,0 +1,86 @@
+.sim-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 centra el título */
+  position: relative;      /* 👈 para posicionar la flecha */
+  background: #222;
+   padding: 1.5rem 1.5rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  margin: 0 auto 30px auto;
+}
+
+.back-btn svg {
+  fill: white;
+  transition: fill 0.3s;
+}
+
+.back-btn svg:hover {
+  fill: #f0a500;
+}
+
+
+.back-btn {
+  background: none;
+  color: white;  
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn img {
+  width: 28px;   
+  height: 28px; 
+}
+
+.back-btn:hover {
+  color: #ffcc00;
+}
+
+.puntos-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.puntos-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.puntos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.puntos-tabla th,
+.puntos-tabla td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.puntos-tabla th {
+  background-color: #444;
+  color: white;
+}
+
+.puntos-tabla tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.puntos-tabla tr:hover {
+  background-color: #f1f1f1;
+}
