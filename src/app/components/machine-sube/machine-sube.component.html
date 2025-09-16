@@ -12,7 +12,7 @@
 <!-- Pregunta actual -->
 <div class="pregunta-container" *ngIf="currentQuestion">
   <strong>Pregunta:</strong>
-  <p>Hasta {{ currentQuestion.lugar }} (Sección {{ currentQuestion.seccion }})</p>
+  <p>Hasta {{ currentQuestion.lugar }} </p>
   <small *ngIf="this.esCorrecta == false">(Respuesta correcta: botón {{ currentQuestion.respuesta }})</small>
 </div>
 
