@@ -16,7 +16,7 @@ export const PREGUNTAS: Record<string, Pregunta[]> =
   "Puente de Arena": [
     {
       "seccion": "2",
-      "Lugares": ["Puente Gerli", "Plaza vea", "Cabildo", "Cabildo y Santa Fe", "Galicia", "Rivadavia", 
+      "Lugares": ["Puente Gerli", "Cabildo", "Cabildo y Santa Fe", "Galicia", "Rivadavia", 
                   "Shopping", "Andreani", "Puente velez sarfield", "Avellaneda", "Piñeiro", "Zepita"],
       "respuesta": 2
     }
@@ -49,7 +49,7 @@ export const PREGUNTAS: Record<string, Pregunta[]> =
     {
       "seccion": "6",
       "Lugares": ["Tagle", "Hospital Rivadavia", "Sanchez de Bustamante", "Hospital Fernandez", "Ocampo", 
-                  "Av. Coronel Diaz", "Las Heras", "Av. Pueyrredón", "Eco Parque", "Plaza Italia"],
+                  "Av. Coronel Diaz", "CEMIC", "Salguero", "Eco Parque", "Plaza Italia"],
       "respuesta": 6
     }
   ],
