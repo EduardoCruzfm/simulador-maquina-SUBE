@@ -1,0 +1,40 @@
+ <!-- Navbar del Simulador -->
+<nav class="sim-navbar">
+<button class="back-btn" (click)="goBack()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27" height="27" fill="white">
+    <path d="M15 19l-7-7 7-7"/>
+  </svg>
+</button>
+
+  <div class="navbar-brand">Seleccione Ramal</div>
+</nav>
+
+<!-- Menu principal -->
+<div class="menu-container">
+  <div class="category-card">
+    <button class="especialidad-boton" (click)="goToSimulator(1)">
+      <img src="image/embajada-eeuu.jpg" alt="Ramal 1" class="especialidad-imagen">
+      <div class="overlay">
+        <span>Ramal 1</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="category-card">
+    <button class="especialidad-boton" (click)="goToSimulator(3)">
+      <img src="image/geba.JPG" alt="Ramal 3" class="especialidad-imagen">
+      <div class="overlay">
+        <span>Ramal 3</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="category-card">
+    <button class="especialidad-boton" (click)="goToSimulator(4)">
+      <img src="image/aereoparque.png" alt="4" class="especialidad-imagen">
+      <div class="overlay">
+        <span>Ramal 4</span>
+      </div>
+    </button>
+  </div>
+</div>

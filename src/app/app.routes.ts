@@ -31,4 +31,11 @@ export const routes: Routes = [
           (m) => m.SectionsComponent
         ),
     },
+    {
+      path: 'branch-selector',
+      loadComponent: () =>
+        import('./components/branch-selector/branch-selector.component').then(
+          (m) => m.BranchSelectorComponent
+        ),
+    },
 ];
