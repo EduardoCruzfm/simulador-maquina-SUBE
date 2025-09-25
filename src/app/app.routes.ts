@@ -4,7 +4,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'sube', pathMatch: 'full' },
     
     {
-      path: 'sube',
+      path: 'sube/:ramalId',
       loadComponent: () =>
         import('./components/machine-sube/machine-sube.component').then(
           (m) => m.MachineSUBEComponent
