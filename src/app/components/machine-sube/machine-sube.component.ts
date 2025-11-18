@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MachineSUBEComponent {
 
-  boletos: Boleto[] = [451.01, 502.43, 541.13, 541.13, 579.87, 579.87, 579.87, 579.87];
+  boletos: Boleto[] = [494.83, 551.24, 593.70, 593.70, 636.21, 636.21, 636.21, 636.21];
   data: {} = {};
   ramal: any = null; 
   currentQuestion: any;
