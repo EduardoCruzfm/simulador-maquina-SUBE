@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'sube', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     
     {
       path: 'sube/:ramalId',
