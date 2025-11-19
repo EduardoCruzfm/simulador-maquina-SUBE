@@ -25,7 +25,7 @@ export const RAMAL_UNO: Record<string, Pregunta[]> =
   "Zepita": [
     {
       "seccion": "3",
-      "Lugares": ["Osvaldo Cruz", "Plaza", "Iriarte", "Alvarado", "California", "Suarez", 
+      "Lugares": ["Osvaldo Cruz", "Sagrado Corazon", "Iriarte", "Alvarado", "California", "Suarez", 
                   "Amancio Alcorta", "Estacion Buenos Aires", "Cancha de Huracan"],
       "respuesta": 3
     }
@@ -76,7 +76,7 @@ export const RAMAL_TRES: Record<string, Pregunta[]> =
   "Zepita": [
     {
       "seccion": "3",
-      "Lugares": ["Osvaldo Cruz", "Plaza", "Iriarte", "Alvarado", "California", "Suarez", 
+      "Lugares": ["Osvaldo Cruz", "Sagrado Corazon", "Iriarte", "Alvarado", "California", "Suarez", 
                   "Amancio Alcorta", "Estacion Buenos Aires", "Cancha de Huracan"],
       "respuesta": 3
     }
@@ -142,7 +142,7 @@ export const RAMAL_CUATRO: Record<string, Pregunta[]> =
   "Zepita": [
     {
       "seccion": "3",
-      "Lugares": ["Osvaldo Cruz", "Plaza", "Iriarte", "Alvarado", "California", "Suarez", 
+      "Lugares": ["Osvaldo Cruz", "Sagrado Corazon", "Iriarte", "Alvarado", "California", "Suarez", 
                   "Amancio Alcorta", "Estacion Buenos Aires", "Cancha de Huracan"],
       "respuesta": 3
     }
